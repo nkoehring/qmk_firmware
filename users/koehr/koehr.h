@@ -72,8 +72,6 @@ enum custom_keycodes {
     GER_S,
 };
 
-#endif
-
 #define LAYOUT_ergodox_wrapper(...) LAYOUT_ergodox(__VA_ARGS__)
 
 /* Keymap 0: Base layer
@@ -87,7 +85,7 @@ enum custom_keycodes {
  * |--------+------+------+------+------+------| LGUI |           | RCTL |------+------+------+------+------+--------|
  * |  LS/(  |   Z  |   X  |   C  |   V  |   B  |------|           |------|   N  |   M  |   ,  |   .  |  Up  |  RS/)  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | LCtl |      |      |      | LAlt |                                       | RAlt |   /  | Left | Down | Right |
+ *   | LCtl |      | VRSN | Calc | LAlt |                                       | RAlt |   /  | Left | Down | Right |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,--------------.
  *                                        | Ins  |PRNTSC|       |SCRLCK| Pause |
@@ -102,7 +100,7 @@ enum custom_keycodes {
   KC_TAB,    KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_LBRC, \
   MO(1),     KC_A,   KC_S,   KC_D,   KC_F,   KC_G,            \
   KC_LSPO,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_LGUI, \
-  KC_LCTL,  KC_NO,  KC_NO,  KC_NO,KC_LALT, \
+  KC_LCTL,  KC_NO,   VRSN,KC_CALC,KC_LALT, \
                                              KC_INS, KC_PSCR,\
                                                      KC_HOME,\
                                      KC_SPC, KC_DEL, KC_END, \
@@ -156,3 +154,6 @@ enum custom_keycodes {
   KC_MPRV, KC_MNXT, \
   KC_MPLY,               \
   KC_MUTE,KC_VOLD, KC_VOLU
+
+bool process_record_calculator(uint16_t, keyrecord_t*);
+#endif
